@@ -20,7 +20,8 @@ public class Main {
         System.out.printf("Введённое число внутри диапозона %b%n", isInside);
 
         Range range2 = new Range(10, 30);
-        Range intersectionRanges = Range.getIntersectionRanges(range, range2);
+        Range intersectionRanges = new Range();
+        intersectionRanges = intersectionRanges.getIntersectionRanges(range, range2);
 
         if (intersectionRanges == null) {
             System.out.println("Диапозоны не пересекаются");
@@ -28,6 +29,13 @@ public class Main {
             System.out.printf("Пересечение диапозонов %.2f до %.2f%n", intersectionRanges.getFrom(), intersectionRanges.getTo());
         }
 
+//        Range[] unionRange = new Range[2];
+//
+//        unionRange[0]= new Range();
+//        unionRange[1]=new Range();
+//        unionRange.getUnionRanges(range, range2);
+//            System.out.printf("Объединение диапозонов %.2f до %.2f%n", unionRange[0].getFrom(), unionRange[0].getTo());
+//        System.out.printf("Объединение диапозонов %.2f до %.2f%n", unionRange[1].getFrom(), unionRange[1].getTo());
 
     }
 }
