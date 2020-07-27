@@ -39,4 +39,8 @@ public class Triangle implements Shape {
         double c = Math.sqrt(Math.pow(x1 - x3, 2) + Math.pow(y1 - y3, 2));
         return a + b + c;
     }
+
+    public String returnShapeName(){
+        return "Треугольник";
+    }
 }

@@ -26,4 +26,8 @@ public class Circle implements Shape {
     public double getPerimeter() {
         return 2 * Math.PI * radius;
     }
+
+    public String returnShapeName(){
+        return "Окружность";
+    }
 }
