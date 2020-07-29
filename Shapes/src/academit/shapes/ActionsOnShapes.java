@@ -9,7 +9,7 @@ public class ActionsOnShapes {
     }
 
     public static Shape findShapeWithSecondLargestPerimeter(Shape[] shapesArray) {
-        Arrays.sort(shapesArray, new SortByArea());
+        Arrays.sort(shapesArray, new SortByPerimeter());
         return shapesArray[shapesArray.length - 2];
     }
 }
