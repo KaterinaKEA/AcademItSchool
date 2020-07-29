@@ -40,7 +40,36 @@ public class Triangle implements Shape {
         return a + b + c;
     }
 
-    public String returnShapeName(){
+    @Override
+    public String returnShapeName() {
         return "Треугольник";
+    }
+
+    @Override
+    public String toString() {
+        return this.x1 + ", " + this.y1 + ", " + this.x2 + ", " + this.y2 + ", " + this.x3 + ", " + this.y3;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) return true;
+
+        if (o == null || o.getClass() != getClass()) return false;
+
+        Triangle t = (Triangle) o;
+        return x1 == t.x1 && y1 == t.y1 && x2 == t.x2 && y2 == t.y2 && x3 == t.x3 && y3 == t.y3;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 7;
+        int hash = 1;
+        hash = prime * hash + Double.hashCode(x1);
+        hash = prime * hash + Double.hashCode(y1);
+        hash = prime * hash + Double.hashCode(x2);
+        hash = prime * hash + Double.hashCode(y2);
+        hash = prime * hash + Double.hashCode(x3);
+        hash = prime * hash + Double.hashCode(y3);
+        return hash;
     }
 }

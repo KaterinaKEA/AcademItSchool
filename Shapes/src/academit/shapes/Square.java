@@ -27,7 +27,31 @@ public class Square implements Shape {
         return 4 * sideLength;
     }
 
-    public String returnShapeName(){
+    @Override
+    public String returnShapeName() {
         return "Квадрат";
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.sideLength);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) return true;
+
+        if (o == null || o.getClass() != getClass()) return false;
+
+        Square square = (Square) o;
+        return sideLength == square.sideLength;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 7;
+        int hash = 1;
+        hash = prime * hash + Double.hashCode(sideLength);
+        return hash;
     }
 }
