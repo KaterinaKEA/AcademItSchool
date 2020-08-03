@@ -10,6 +10,7 @@ public class Main {
         System.out.printf("Длина диапозона от %.2f до %.2f = %.2f%n", range.getFrom(), range.getTo(), rangeLength);
 
         range.setTo(20);
+        range.setFrom(2);
         System.out.printf("Диапозон стал от %.2f до %.2f%n", range.getFrom(), range.getTo());
 
         System.out.println("Введите число для проверки принадлежности к диапозону:");
@@ -29,13 +30,14 @@ public class Main {
             System.out.printf("Пересечение диапозонов %.2f до %.2f%n", intersectionRanges.getFrom(), intersectionRanges.getTo());
         }
 
-//        Range[] unionRange = new Range[2];
-//
-//        unionRange[0]= new Range();
-//        unionRange[1]=new Range();
-//        unionRange.getUnionRanges(range, range2);
-//            System.out.printf("Объединение диапозонов %.2f до %.2f%n", unionRange[0].getFrom(), unionRange[0].getTo());
-//        System.out.printf("Объединение диапозонов %.2f до %.2f%n", unionRange[1].getFrom(), unionRange[1].getTo());
+        Range[] unionRange = new Range[2];
 
+        unionRange[0] = new Range();
+        unionRange = unionRange[0].getUnionRanges(range, range2);
+        System.out.printf("Объединение диапозонов от %.2f до %.2f%n", unionRange[0].getFrom(), unionRange[0].getTo());
+
+        if (unionRange.length == 2) {
+            System.out.printf("и от %.2f до %.2f%n, так как диапозоны не пересекаются", unionRange[1].getFrom(), unionRange[1].getTo());
+        }
     }
 }
