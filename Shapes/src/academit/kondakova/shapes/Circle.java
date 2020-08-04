@@ -1,40 +1,40 @@
-package academit.shapes;
+package academit.kondakova.shapes;
 
-public class Square implements Shape {
-    private double sideLength;
+public class Circle implements Shape {
+    private double radius;
 
-    public Square(double sideLength) {
-        this.sideLength = sideLength;
+    public Circle(double radius) {
+        this.radius = radius;
     }
 
     @Override
     public double getWidth() {
-        return sideLength;
+        return 2 * radius;
     }
 
     @Override
     public double getHeight() {
-        return sideLength;
+        return 2 * radius;
     }
 
     @Override
     public double getArea() {
-        return sideLength * sideLength;
+        return Math.PI * Math.pow(radius, 2);
     }
 
     @Override
     public double getPerimeter() {
-        return 4 * sideLength;
+        return 2 * Math.PI * radius;
     }
 
     @Override
     public String returnShapeName() {
-        return "Квадрат";
+        return "Окружность";
     }
 
     @Override
     public String toString() {
-        return String.valueOf(this.sideLength);
+        return String.valueOf(this.radius);
     }
 
     @Override
@@ -43,15 +43,15 @@ public class Square implements Shape {
 
         if (o == null || o.getClass() != getClass()) return false;
 
-        Square square = (Square) o;
-        return sideLength == square.sideLength;
+        Circle c = (Circle) o;
+        return radius == c.radius;
     }
 
     @Override
     public int hashCode() {
         final int prime = 7;
         int hash = 1;
-        hash = prime * hash + Double.hashCode(sideLength);
+        hash = prime * hash + Double.hashCode(radius);
         return hash;
     }
 }

@@ -1,4 +1,4 @@
-package academit.shapes;
+package academit.kondakova.shapes;
 
 import java.util.Arrays;
 

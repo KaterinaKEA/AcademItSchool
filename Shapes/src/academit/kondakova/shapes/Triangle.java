@@ -1,4 +1,4 @@
-package academit.shapes;
+package academit.kondakova.shapes;
 
 public class Triangle implements Shape {
     private double x1;

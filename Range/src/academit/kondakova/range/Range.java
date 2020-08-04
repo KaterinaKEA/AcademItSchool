@@ -1,4 +1,4 @@
-package academit.range;
+package academit.kondakova.range;
 
 public class Range {
     private double from;

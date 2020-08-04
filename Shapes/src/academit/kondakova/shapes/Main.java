@@ -1,4 +1,4 @@
-package academit.shapes;
+package academit.kondakova.shapes;
 
 public class Main {
     public static void main(String[] args) {
