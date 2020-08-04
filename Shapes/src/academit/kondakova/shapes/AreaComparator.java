@@ -2,7 +2,7 @@ package academit.kondakova.shapes;
 
 import java.util.Comparator;
 
-public class SortByArea implements Comparator<Shape> {
+public class AreaComparator implements Comparator<Shape> {
     @Override
     public int compare(Shape o1, Shape o2) {
         return Double.compare(o1.getArea(), o2.getArea());

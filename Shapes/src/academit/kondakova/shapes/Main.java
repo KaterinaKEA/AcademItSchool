@@ -1,5 +1,10 @@
 package academit.kondakova.shapes;
 
+import academit.kondakova.shapes.types.Circle;
+import academit.kondakova.shapes.types.Rectangle;
+import academit.kondakova.shapes.types.Square;
+import academit.kondakova.shapes.types.Triangle;
+
 public class Main {
     public static void main(String[] args) {
         Shape[] shapesArray = {new Square(3), new Triangle(1, 1, 2, 2, 3, 3),
@@ -7,10 +12,10 @@ public class Main {
 
         Shape shapeWithMaximumArea = ActionsOnShapes.findShapeWithMaximumArea(shapesArray);
         System.out.printf("Фигура с максимальной площадью - %s, площадь = %.2f%n",
-                shapeWithMaximumArea.returnShapeName(), shapeWithMaximumArea.getArea());
+                shapeWithMaximumArea.getShapeName(), shapeWithMaximumArea.getArea());
 
         Shape shapeWithSecondLargestPerimeter = ActionsOnShapes.findShapeWithSecondLargestPerimeter(shapesArray);
         System.out.printf("Фигура со вторым по величине периметром - %s, периметр = %.2f%n",
-                shapeWithSecondLargestPerimeter.returnShapeName(), shapeWithSecondLargestPerimeter.getPerimeter());
+                shapeWithSecondLargestPerimeter.getShapeName(), shapeWithSecondLargestPerimeter.getPerimeter());
     }
 }

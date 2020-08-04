@@ -1,4 +1,6 @@
-package academit.kondakova.shapes;
+package academit.kondakova.shapes.types;
+
+import academit.kondakova.shapes.Shape;
 
 public class Square implements Shape {
     private double sideLength;
@@ -28,13 +30,13 @@ public class Square implements Shape {
     }
 
     @Override
-    public String returnShapeName() {
+    public String getShapeName() {
         return "Квадрат";
     }
 
     @Override
     public String toString() {
-        return String.valueOf(this.sideLength);
+        return ("Квадрат со сторонами = " + sideLength);
     }
 
     @Override

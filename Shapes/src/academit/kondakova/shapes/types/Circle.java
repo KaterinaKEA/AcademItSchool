@@ -1,4 +1,6 @@
-package academit.kondakova.shapes;
+package academit.kondakova.shapes.types;
+
+import academit.kondakova.shapes.Shape;
 
 public class Circle implements Shape {
     private double radius;
@@ -28,13 +30,13 @@ public class Circle implements Shape {
     }
 
     @Override
-    public String returnShapeName() {
+    public String getShapeName() {
         return "Окружность";
     }
 
     @Override
     public String toString() {
-        return String.valueOf(this.radius);
+        return ("Окружность с радиусом = " + radius);
     }
 
     @Override

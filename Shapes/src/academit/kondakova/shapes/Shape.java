@@ -9,5 +9,5 @@ public interface Shape {
 
     double getPerimeter();
 
-    String returnShapeName();
+    String getShapeName();
 }
