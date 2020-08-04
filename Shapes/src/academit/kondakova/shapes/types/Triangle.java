@@ -31,15 +31,19 @@ public class Triangle implements Shape {
 
     @Override
     public double getArea() {
-        return 0.5 * getHeight() * getWidth();
+        return 0.5 * Math.abs((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1));
     }
 
     @Override
     public double getPerimeter() {
-        double a = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-        double b = Math.sqrt(Math.pow(x3 - x2, 2) + Math.pow(y3 - y2, 2));
-        double c = Math.sqrt(Math.pow(x1 - x3, 2) + Math.pow(y1 - y3, 2));
+        double a = segmentLength(x1, x2, y1, y2);
+        double b = segmentLength(x2, x3, y2, y3);
+        double c = segmentLength(x3, x1, y3, y1);
         return a + b + c;
+    }
+
+    private double segmentLength(double a1, double a2, double b1, double b2) {
+        return Math.sqrt(Math.pow(a2 - a1, 2) + Math.pow(b2 - b1, 2));
     }
 
     @Override
@@ -49,7 +53,7 @@ public class Triangle implements Shape {
 
     @Override
     public String toString() {
-        return ("Треугольник c координатами: (" + x1 + ", " + y1 + "), (" + x2 + ", " + y2 + "), (" + x3 + ", " + y3+ ")");
+        return ("Треугольник c координатами: (" + x1 + ", " + y1 + "), (" + x2 + ", " + y2 + "), (" + x3 + ", " + y3 + ")");
     }
 
     @Override
