@@ -58,9 +58,13 @@ public class Triangle implements Shape {
 
     @Override
     public boolean equals(Object o) {
-        if (o == this) return true;
+        if (o == this) {
+            return true;
+        }
 
-        if (o == null || o.getClass() != getClass()) return false;
+        if (o == null || o.getClass() != getClass()) {
+            return false;
+        }
 
         Triangle t = (Triangle) o;
         return x1 == t.x1 && y1 == t.y1 && x2 == t.x2 && y2 == t.y2 && x3 == t.x3 && y3 == t.y3;

@@ -41,9 +41,13 @@ public class Circle implements Shape {
 
     @Override
     public boolean equals(Object o) {
-        if (o == this) return true;
+        if (o == this) {
+            return true;
+        }
 
-        if (o == null || o.getClass() != getClass()) return false;
+        if (o == null || o.getClass() != getClass()) {
+            return false;
+        }
 
         Circle c = (Circle) o;
         return radius == c.radius;
