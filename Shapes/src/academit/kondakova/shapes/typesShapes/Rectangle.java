@@ -1,6 +1,4 @@
-package academit.kondakova.shapes.types;
-
-import academit.kondakova.shapes.Shape;
+package academit.kondakova.shapes.typesShapes;
 
 public class Rectangle implements Shape {
     private double side1;
@@ -38,7 +36,7 @@ public class Rectangle implements Shape {
 
     @Override
     public String toString() {
-        return ("Прямоугольник с шириной = " + side1 + " и длиной = " + side2);
+        return "Прямоугольник с шириной = " + side1 + " и длиной = " + side2;
     }
 
     @Override

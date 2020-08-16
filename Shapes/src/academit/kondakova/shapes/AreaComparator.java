@@ -1,5 +1,7 @@
 package academit.kondakova.shapes;
 
+import academit.kondakova.shapes.typesShapes.Shape;
+
 import java.util.Comparator;
 
 public class AreaComparator implements Comparator<Shape> {
