@@ -4,9 +4,6 @@ public class Range {
     private double from;
     private double to;
 
-    public Range() {
-    }
-
     public Range(double from, double to) {
         this.from = from;
         this.to = to;
@@ -16,12 +13,13 @@ public class Range {
         return from;
     }
 
-    public double getTo() {
-        return to;
-    }
-
     public void setFrom(double from) {
         this.from = from;
+    }
+
+
+    public double getTo() {
+        return to;
     }
 
     public void setTo(double to) {
@@ -29,46 +27,57 @@ public class Range {
     }
 
     public double getLength() {
-        return (to - from);
+        return to - from;
     }
 
     public boolean isInside(double number) {
-        return number <= to && number >= from;
+        return number >= from && number <= to;
     }
 
-    public Range getIntersectionRanges(Range range1, Range range2) {
-        if (range1.getFrom() <= range2.getTo() && range1.getTo() >= range2.getFrom()) {
-            return new Range(Math.max(range1.getFrom(), range2.getFrom()), Math.min(range1.getTo(), range2.getTo()));
+    public Range getIntersectionRanges(Range range2) {
+        double from2 = range2.getFrom();
+        double to2 = range2.getTo();
+
+        if (from <= to2 && to >= from2) {
+            return new Range(Math.max(from, from2), Math.min(to, to2));
         } else {
             return null;
         }
     }
+    //TODO 5. В пересечении по одной точке пусть считается, что пересечения нет
+    //
+    // TODO 6. Есть много ошибок в разности. И не должно быть логики про отнимание 1
 
-    public Range[] getUnionRanges(Range range1, Range range2) {
+    public Range[] getUnionRanges(Range range2) {
         Range[] rangeArray;
+        double from2 = range2.getFrom();
+        double to2 = range2.getTo();
 
-        if (range1.getFrom() <= range2.getTo() && range1.getTo() >= range2.getFrom()) {
+        if (from <= to2 && to >= from2) {
             rangeArray = new Range[1];
-            rangeArray[0] = new Range(Math.min(range1.getFrom(), range2.getFrom()), Math.max(range1.getTo(), range2.getTo()));
+            rangeArray[0] = new Range(Math.min(from, from2), Math.max(to, to2));
         } else {
             rangeArray = new Range[2];
-            rangeArray[0] = range1;
-            rangeArray[1] = range2;
+            rangeArray[0] = new Range(from, to);
+            rangeArray[1] = new Range(from2, to2);
         }
         return rangeArray;
     }
 
-    public Range[] getRangesDifference(Range range1, Range range2) {
+    public Range[] getRangesDifference(Range range2) {
         Range[] rangeArray;
-        if (range1.getFrom() == range2.getTo() && range1.getTo() == range2.getFrom()) {
+        double from2 = range2.getFrom();
+        double to2 = range2.getTo();
+
+        if (from == to2 && to == from2) {
             return null;
-        } else if (range1.getFrom() <= range2.getTo() && range1.getTo() >= range2.getFrom()) {
+        } else if (from <= to2 && to >= from2) {
             rangeArray = new Range[1];
-            rangeArray[0] = new Range(range1.getFrom(), range2.getFrom() - 1);
+            rangeArray[0] = new Range(from, from2 - 1);
         } else {
             rangeArray = new Range[2];
-            rangeArray[0] = range1;
-            rangeArray[1] = range2;
+            rangeArray[0] = new Range(from, to);
+            rangeArray[1] = new Range(from2, to2);
         }
         return rangeArray;
     }
