@@ -43,7 +43,7 @@ public class Main {
         Range[] rangeDifference = range.getRangesDifference(range2);
 
         if (rangeDifference == null) {
-            System.out.println("Разность диапозонов равна нулю, так как диапозоны пересекаются");
+            System.out.println("Разность диапозонов равна нулю, так как диапозоны совпадают");
         } else {
             System.out.printf("Разность диапозонов от %.2f до %.2f%n", rangeDifference[0].getFrom(), rangeDifference[0].getTo());
 

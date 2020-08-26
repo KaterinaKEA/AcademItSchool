@@ -38,15 +38,12 @@ public class Range {
         double from2 = range2.getFrom();
         double to2 = range2.getTo();
 
-        if (from <= to2 && to >= from2) {
+        if (from < to2 && to > from2) {
             return new Range(Math.max(from, from2), Math.min(to, to2));
         } else {
             return null;
         }
     }
-    //TODO 5. В пересечении по одной точке пусть считается, что пересечения нет
-    //
-    // TODO 6. Есть много ошибок в разности. И не должно быть логики про отнимание 1
 
     public Range[] getUnionRanges(Range range2) {
         Range[] rangeArray;
@@ -69,11 +66,11 @@ public class Range {
         double from2 = range2.getFrom();
         double to2 = range2.getTo();
 
-        if (from == to2 && to == from2) {
+        if (from == from2 && to == to2) {
             return null;
         } else if (from <= to2 && to >= from2) {
             rangeArray = new Range[1];
-            rangeArray[0] = new Range(from, from2 - 1);
+            rangeArray[0] = new Range(from, from2);
         } else {
             rangeArray = new Range[2];
             rangeArray[0] = new Range(from, to);
