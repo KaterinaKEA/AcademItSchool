@@ -1,6 +1,6 @@
 package academit.kondakova.shapes;
 
-import academit.kondakova.shapes.typesShapes.*;
+import academit.kondakova.shapes.types_shapes.*;
 
 public class Main {
     public static void main(String[] args) {

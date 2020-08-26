@@ -1,4 +1,4 @@
-package academit.kondakova.shapes.typesShapes;
+package academit.kondakova.shapes.types_shapes;
 
 public class Circle implements Shape {
     private double radius;

@@ -1,4 +1,4 @@
-package academit.kondakova.shapes.typesShapes;
+package academit.kondakova.shapes.types_shapes;
 
 public interface Shape {
     double getWidth();

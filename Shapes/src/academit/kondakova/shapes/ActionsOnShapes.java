@@ -1,6 +1,6 @@
 package academit.kondakova.shapes;
 
-import academit.kondakova.shapes.typesShapes.Shape;
+import academit.kondakova.shapes.types_shapes.Shape;
 
 import java.util.Arrays;
 

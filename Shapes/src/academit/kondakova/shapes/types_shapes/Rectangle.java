@@ -1,4 +1,4 @@
-package academit.kondakova.shapes.typesShapes;
+package academit.kondakova.shapes.types_shapes;
 
 public class Rectangle implements Shape {
     private double side1;
